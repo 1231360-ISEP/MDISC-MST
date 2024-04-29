@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.stream.Stream;
 
 public class Graph {
-    private List<Vertex> vertexList;
-    private List<Edge> edgeList;
+    public final List<Vertex> vertexList;
+    public final List<Edge> edgeList;
 
     public Graph() {
         this.vertexList = new ArrayList<>();
@@ -53,14 +53,6 @@ public class Graph {
         }
 
         return neighbors;
-    }
-
-    public List<Vertex> getVertexList() {
-        return this.vertexList;
-    }
-
-    public List<Edge> getEdgeList() {
-        return this.edgeList;
     }
 
     public void printGraph() {

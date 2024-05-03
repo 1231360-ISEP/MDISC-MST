@@ -1,16 +1,15 @@
 package lpschool;
 
-import java.io.File;
-import java.io.FileFilter;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.Collections;
 import java.util.Scanner;
 
-public class Main {
-    private static final String SRC_DIR_PATH = "src/main/resources";
-    private static final int REPETITION_COUNT = 1;
+public class MainUS14 {
+    private static final String SRC_DIR_PATH = "src/main/resources/in/us14";
+    private static final String OUTPUT_PATH = "src/main/resources/out/us14/us14.csv";
+    private static final int REPETITION_COUNT = 10;
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException {
         File dir = new File(SRC_DIR_PATH);
 
         if(!dir.isDirectory())
@@ -20,6 +19,9 @@ public class Main {
             @Override
             public boolean accept(File pathname) {
                 if(!pathname.isFile())
+                    return false;
+
+                if(!pathname.getName().startsWith("us14_"))
                     return false;
 
                 if(!pathname.getName().endsWith(".csv"))
@@ -33,6 +35,16 @@ public class Main {
             return;
 
         double totalSum = 0;
+
+        File outputFile = new File(OUTPUT_PATH);
+
+        if (!outputFile.exists())
+            outputFile.createNewFile();
+
+        if (!outputFile.isFile())
+            throw new FileNotFoundException(OUTPUT_PATH + " file not found");
+
+        FileWriter fileOut = new FileWriter(outputFile);
 
         for (File file : files) {
             Graph graph = new Graph();
@@ -51,11 +63,13 @@ public class Main {
 
                 fileIn.close();
 
-                Collections.sort(graph.edgeList);
-
                 long startTime = System.nanoTime();
 
-                cost = Kruskal.kruskal(graph);
+                Collections.sort(graph.edgeList);
+
+                Edge[] result = new Edge[0];
+
+                cost = Kruskal.kruskal(graph, result);
 
                 long endTime = System.nanoTime();
 
@@ -72,7 +86,11 @@ public class Main {
             totalSum += sum / REPETITION_COUNT;
 
             System.out.printf("Average execution time: %f ms%n", sum / REPETITION_COUNT * 1e-6);
+
+            fileOut.append(String.format("%d;%f%n", graph.edgeList.size(), sum / REPETITION_COUNT * 1e-6));
         }
+
+        fileOut.close();
 
         System.out.printf("%n%nTotal average execution time: %f ms%n", totalSum / files.length * 1e-6);
     }

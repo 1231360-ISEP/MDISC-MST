@@ -36,7 +36,7 @@ public class Kruskal {
         }
     }
 
-    public static int kruskal(Graph graph) {
+    public static int kruskal(Graph graph, Edge[] result) {
         List<Vertex> vertices = graph.vertexList;
         List<Edge> edges = graph.edgeList;
         int vertexCount = vertices.size();
@@ -45,7 +45,7 @@ public class Kruskal {
         int nEdges = 0;
 
         Subset[] subsets = new Subset[vertexCount];
-        Edge[] result = new Edge[vertexCount];
+        result = new Edge[vertexCount];
 
         for (int i = 0; i < vertexCount; i++) {
             subsets[i] = new Subset(i, 0);

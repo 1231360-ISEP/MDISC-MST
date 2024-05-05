@@ -36,7 +36,7 @@ public class Kruskal {
         }
     }
 
-    public static int kruskal(Graph graph, Edge[] result) {
+    public static Edge[] kruskalSubGraph(Graph graph) {
         List<Vertex> vertices = graph.vertexList;
         List<Edge> edges = graph.edgeList;
         int vertexCount = vertices.size();
@@ -45,7 +45,7 @@ public class Kruskal {
         int nEdges = 0;
 
         Subset[] subsets = new Subset[vertexCount];
-        result = new Edge[vertexCount];
+        Edge[] result = new Edge[vertexCount];
 
         for (int i = 0; i < vertexCount; i++) {
             subsets[i] = new Subset(i, 0);
@@ -66,10 +66,17 @@ public class Kruskal {
             j++;
         }
 
+        return result;
+    }
+
+    public static int kruskalCost(Graph graph) {
+        Edge[] subGraph = kruskalSubGraph(graph);
+
         int cost = 0;
 
-        for (int i = 0; i < nEdges; i++)
-            cost += result[i].getDistance();
+        for (Edge edge : subGraph) {
+            cost += edge.getDistance();
+        }
 
         return cost;
     }

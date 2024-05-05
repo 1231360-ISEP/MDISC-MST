@@ -54,4 +54,9 @@ public class Edge implements Comparable<Edge> {
     public int compareTo(Edge o) {
         return this.distance - o.getDistance();
     }
+
+    @Override
+    public String toString() {
+        return start.toString() + end.toString();
+    }
 }

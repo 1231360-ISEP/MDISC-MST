@@ -5,20 +5,23 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class MainUS14 {
-    private static final String SRC_DIR_PATH = "src/main/resources/in/us14";
+    private static final String INPUT_PATH = "src/main/resources/in/us14";
     private static final String OUTPUT_PATH = "src/main/resources/out/us14/us14.csv";
     private static final int REPETITION_COUNT = 10;
 
     public static void main(String[] args) throws IOException {
-        File dir = new File(SRC_DIR_PATH);
+        File dir = new File(INPUT_PATH);
 
         if(!dir.isDirectory())
-            throw new FileNotFoundException(SRC_DIR_PATH + " directory not found");
+            throw new FileNotFoundException(INPUT_PATH + " directory not found");
 
         File[] files = dir.listFiles(new FileFilter() {
             @Override
             public boolean accept(File pathname) {
                 if(!pathname.isFile())
+                    return false;
+
+                if(!pathname.canRead())
                     return false;
 
                 if(!pathname.getName().startsWith("us14_"))
@@ -59,7 +62,7 @@ public class MainUS14 {
 
                 Scanner fileIn = new Scanner(file);
 
-                readFile(fileIn, graph);
+                Files.readFile(fileIn, graph);
 
                 fileIn.close();
 
@@ -67,9 +70,7 @@ public class MainUS14 {
 
                 Collections.sort(graph.edgeList);
 
-                Edge[] result = new Edge[0];
-
-                cost = Kruskal.kruskal(graph, result);
+                cost = Kruskal.kruskalCost(graph);
 
                 long endTime = System.nanoTime();
 
@@ -93,18 +94,5 @@ public class MainUS14 {
         fileOut.close();
 
         System.out.printf("%n%nTotal average execution time: %f ms%n", totalSum / files.length * 1e-6);
-    }
-
-    private static void readFile(Scanner scanner, Graph graph) {
-        while (scanner.hasNextLine()) {
-            String[] data = scanner.nextLine().split(";");
-
-            Vertex start = new Vertex(data[0].trim());
-            Vertex end = new Vertex(data[1].trim());
-
-            graph.addVertex(start);
-            graph.addVertex(end);
-            graph.addEdge(new Edge(start, end, Integer.parseInt(data[2].trim())));
-        }
     }
 }

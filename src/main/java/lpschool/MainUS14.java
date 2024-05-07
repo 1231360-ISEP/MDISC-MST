@@ -6,7 +6,9 @@ import java.util.Scanner;
 
 public class MainUS14 {
     private static final String INPUT_PATH = "src/main/resources/in/us14";
-    private static final String OUTPUT_PATH = "src/main/resources/out/us14/us14.csv";
+    private static final String OUTPUT_PATH = "src/main/resources/out/us14";
+    private static final String OUTPUT_CSV_PATH = OUTPUT_PATH + "/us14.csv";
+    private static final String GNUPLOT_TEMPLATE_PATH = "src/main/resources/gnuplot_chart.p";
     private static final int REPETITION_COUNT = 10;
 
     public static void main(String[] args) throws IOException {
@@ -14,6 +16,14 @@ public class MainUS14 {
 
         if(!dir.isDirectory())
             throw new FileNotFoundException(INPUT_PATH + " directory not found");
+
+        File outputDir = new File(OUTPUT_PATH);
+
+        if (!outputDir.exists())
+            outputDir.mkdirs();
+
+        if (!outputDir.isDirectory())
+            throw new FileNotFoundException(OUTPUT_PATH + " directory not found");
 
         File[] files = dir.listFiles(new FileFilter() {
             @Override
@@ -39,13 +49,13 @@ public class MainUS14 {
 
         double totalSum = 0;
 
-        File outputFile = new File(OUTPUT_PATH);
+        File outputFile = new File(OUTPUT_CSV_PATH);
 
         if (!outputFile.exists())
             outputFile.createNewFile();
 
         if (!outputFile.isFile())
-            throw new FileNotFoundException(OUTPUT_PATH + " file not found");
+            throw new FileNotFoundException(OUTPUT_CSV_PATH + " file not found");
 
         FileWriter fileOut = new FileWriter(outputFile);
 
@@ -94,5 +104,8 @@ public class MainUS14 {
         fileOut.close();
 
         System.out.printf("%n%nTotal average execution time: %f ms%n", totalSum / files.length * 1e-6);
+
+        String[] command = { "gnuplot", GNUPLOT_TEMPLATE_PATH };
+        Runtime.getRuntime().exec(command);
     }
 }

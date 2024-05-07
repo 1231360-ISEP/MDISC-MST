@@ -74,9 +74,9 @@ public class Kruskal {
 
         int cost = 0;
 
-        for (Edge edge : subGraph) {
-            cost += edge.getDistance();
-        }
+        for (Edge edge : subGraph)
+            if (edge != null)
+                cost += edge.getDistance();
 
         return cost;
     }

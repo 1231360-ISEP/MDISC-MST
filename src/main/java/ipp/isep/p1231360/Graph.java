@@ -1,8 +1,7 @@
-package lpschool;
+package ipp.isep.p1231360;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class Graph {
     public final List<Vertex> vertexList;

@@ -1,4 +1,4 @@
-package lpschool;
+package ipp.isep.p1231360;
 
 import java.util.Scanner;
 

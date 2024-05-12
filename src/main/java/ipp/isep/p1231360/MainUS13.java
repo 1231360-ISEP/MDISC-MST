@@ -1,4 +1,4 @@
-package lpschool;
+package ipp.isep.p1231360;
 
 import org.graphstream.graph.implementations.SingleGraph;
 import org.graphstream.stream.file.FileSinkDOT;

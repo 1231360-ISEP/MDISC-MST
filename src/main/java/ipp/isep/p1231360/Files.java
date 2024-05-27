@@ -12,7 +12,8 @@ public class Files {
 
             graph.addVertex(start);
             graph.addVertex(end);
-            graph.addEdge(new Edge(start, end, Integer.parseInt(data[2].trim())));
+
+            graph.addEdge(start, end, Integer.parseInt(data[2].trim()));
         }
     }
 }

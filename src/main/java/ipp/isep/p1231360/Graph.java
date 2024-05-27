@@ -1,19 +1,20 @@
 package ipp.isep.p1231360;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Graph {
-    public final List<Vertex> vertexList;
-    public final List<Edge> edgeList;
+    List<Vertex> vertexList;
+    List<Edge> edgeList;
+    private final Map<Vertex, List<Edge>> adjacencyList;
 
     public Graph() {
         this.vertexList = new ArrayList<>();
         this.edgeList = new ArrayList<>();
+        this.adjacencyList = new HashMap<>();
     }
 
     public void addVertex(Vertex vertex) {
-        if(!this.vertexList.contains(vertex))
+        if (!this.vertexList.contains(vertex))
             this.vertexList.add(vertex);
     }
 
@@ -21,9 +22,13 @@ public class Graph {
         this.vertexList.remove(vertex);
     }
 
-    public void addEdge(Edge edge) {
-        if(!this.edgeList.contains(edge))
+    public void addEdge(Vertex start, Vertex end, int distance) {
+        Edge edge = new Edge(start, end, distance);
+        if (!this.edgeList.contains(edge))
             this.edgeList.add(edge);
+        adjacencyList.putIfAbsent(start, new ArrayList<>());
+        adjacencyList.putIfAbsent(end, new ArrayList<>());
+        adjacencyList.get(start).add(edge);
     }
 
     public void removeEdge(Edge edge) {
@@ -31,39 +36,27 @@ public class Graph {
     }
 
     public boolean getAdjacent(Vertex vertex1, Vertex vertex2) {
-        for (Edge edge : this.edgeList) {
-            if(edge.getStart().equals(vertex1) && edge.getEnd().equals(vertex2)) {
-                return true;
-            }
-        }
-
-        return false;
+        return this.edgeList.stream().anyMatch(edge -> edge.getStart().equals(vertex1) && edge.getEnd().equals(vertex2));
     }
 
     public List<Vertex> getNeighbors(Vertex vertex) {
         List<Vertex> neighbors = new ArrayList<>();
-
         for (Edge edge : this.edgeList) {
-            if (edge.getStart().equals(vertex)) {
-                if (!neighbors.contains(edge.getEnd())) {
-                    neighbors.add(edge.getEnd());
-                }
+            if (edge.getStart().equals(vertex) && !neighbors.contains(edge.getEnd())) {
+                neighbors.add(edge.getEnd());
             }
         }
-
         return neighbors;
     }
 
     public void printGraph() {
         for (Vertex vertex : this.vertexList) {
             System.out.printf("Vertex %s%n", vertex.getValue());
-
-            List<Edge> vertexEdgeList = edgeList.stream().filter(edge -> {
-                return edge.getStart().equals(vertex);
-            }).toList();
-
-            for (Edge edge : vertexEdgeList) {
-                System.out.printf("  ==[%d]==> %s%n", edge.getDistance(), edge.getEnd().getValue());
+            List<Edge> vertexEdgeList = adjacencyList.get(vertex);
+            if (vertexEdgeList != null) {
+                for (Edge edge : vertexEdgeList) {
+                    System.out.printf("  ==[%d]==> %s%n", edge.getDistance(), edge.getEnd().getValue());
+                }
             }
         }
     }
@@ -72,5 +65,13 @@ public class Graph {
         for (Edge edge : this.edgeList) {
             System.out.printf("%s ==[%d]==> %s%n", edge.getStart().getValue(), edge.getDistance(), edge.getEnd().getValue());
         }
+    }
+
+    public List<Edge> getEdges(Vertex vertex) {
+        return adjacencyList.getOrDefault(vertex, new ArrayList<>());
+    }
+
+    public Set<Vertex> getVertices() {
+        return new HashSet<>(vertexList);
     }
 }

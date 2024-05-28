@@ -68,7 +68,7 @@ public class MainUS17 {
         FileSinkDOT sink = new FileSinkDOT();
         sink.writeAll(graph, GRAPH_PATH);
 
-        String dotPath = "\"C:\\Users\\dinis\\OneDrive\\Ambiente de Trabalho\\Graphviz-11.0.0-win64\\bin\\dot.exe\"";
+        String dotPath = "\"C:\\Program Files\\Graphviz-11.0.0-win64\\bin\\dot.exe\"";
         String[] command = {dotPath, "-Tpng", GRAPH_PATH, "-o", PATH_IMAGE_PATH};
         Runtime.getRuntime().exec(command);
     }

@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea4e7b36-7b25-4ea0-aabd-61b1d2c2b40a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/Dijkstra.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/PathInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/in/us17/us17_input.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/Files.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/Files.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/Graph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/FilesUS17.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/in/us17/us17_matrix.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/in/us17/us17_points_names.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/Dijkstra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/Dijkstra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/MainUS17.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/MainUS17.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/PathInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/PathInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us17/us17_input.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,31 +35,31 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2h47FL2klO8xPikJBHaup8HPYgg" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.MainUS14.executor": "Run",
-    "Application.MainUS17.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/dinis/OneDrive/Ambiente de Trabalho/MDISC-MST/src/main/resources/out",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.MainUS14.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainUS17.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/dinis/OneDrive/Ambiente de Trabalho/MDISC-MST/src/main/resources/out&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\dinis\OneDrive\Ambiente de Trabalho\MDISC-MST\src\main\resources\out" />
@@ -73,7 +72,40 @@
       <recent name="ipp.isep.p1231360" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.MainUS17">
+    <configuration name="MainUS14" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ipp.isep.p1231360.MainUS14" />
+      <module name="Kruskal" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ipp.isep.p1231360.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainUS17 (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainUS17" />
+      <module name="Kruskal" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainUS17" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ipp.isep.p1231360.MainUS17" />
+      <module name="Kruskal" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ipp.isep.p1231360.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="DjangoTestsConfigurationType">
       <module name="MDISC-MST" />
       <option name="ENV_FILES" value="" />
@@ -172,6 +204,13 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainUS17" />
+        <item itemvalue="Application.MainUS17 (1)" />
+        <item itemvalue="Application.MainUS14" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -188,11 +227,28 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716841392787</updated>
-      <workItem from="1716841397052" duration="3044000" />
+      <workItem from="1716841397052" duration="3341000" />
+      <workItem from="1716844855926" duration="152000" />
+      <workItem from="1716884290638" duration="478000" />
+      <workItem from="1716885407168" duration="1000" />
+      <workItem from="1716927075627" duration="4947000" />
     </task>
+    <task id="LOCAL-00001" summary="Add us17 update graph with new methods and files change the addEdge directly">
+      <option name="closed" value="true" />
+      <created>1716844732398</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1716844732398</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add us17 update graph with new methods and files change the addEdge directly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add us17 update graph with new methods and files change the addEdge directly" />
   </component>
 </project>

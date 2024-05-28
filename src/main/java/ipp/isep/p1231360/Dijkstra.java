@@ -2,46 +2,64 @@ package ipp.isep.p1231360;
 
 import java.util.*;
 
-class Dijkstra {
-    public static PathInfo dijkstra(Graph graph, Vertex source, Vertex target) {
-        Map<Vertex, Integer> distances = new HashMap<>();
-        Map<Vertex, Vertex> predecessors = new HashMap<>();
-        PriorityQueue<Vertex> priorityQueue = new PriorityQueue<>(Comparator.comparingInt(distances::get));
+public class Dijkstra {
+    public static PathInfo[] dijkstra(double[][] graph, int[] signPoints, int assemblyPoint) {
+        int numVertices = graph.length;
+        PathInfo[] results = new PathInfo[signPoints.length];
 
-        for (Vertex vertex : graph.getVertices()) {
-            distances.put(vertex, Integer.MAX_VALUE);
-            predecessors.put(vertex, null);
-        }
-        distances.put(source, 0);
-        priorityQueue.add(source);
+        for (int k = 0; k < signPoints.length; k++) {
+            int source = signPoints[k];
 
-        while (!priorityQueue.isEmpty()) {
-            Vertex current = priorityQueue.poll();
+            double[] distances = new double[numVertices];
+            int[] predecessors = new int[numVertices];
+            boolean[] visited = new boolean[numVertices];
 
-            if (current.equals(target)) {
-                break;
-            }
+            Arrays.fill(distances, Double.MAX_VALUE);
+            Arrays.fill(predecessors, -1);
 
-            for (Edge edge : graph.getEdges(current)) {
-                Vertex neighbor = edge.getEnd();
-                int newDist = distances.get(current) + edge.getDistance();
+            distances[source] = 0;
+            PriorityQueue<VertexDistancePair> pq = new PriorityQueue<>(Comparator.comparingDouble(v -> v.distance));
+            pq.add(new VertexDistancePair(source, 0));
 
-                if (newDist < distances.get(neighbor)) {
-                    distances.put(neighbor, newDist);
-                    predecessors.put(neighbor, current);
-                    priorityQueue.add(neighbor);
+            while (!pq.isEmpty()) {
+                VertexDistancePair current = pq.poll();
+                int currentVertex = current.vertex;
+
+                if (visited[currentVertex]) continue;
+                visited[currentVertex] = true;
+
+                for (int i = 0; i < numVertices; i++) {
+                    if (graph[currentVertex][i] > 0 && !visited[i]) {
+                        double newDist = distances[currentVertex] + graph[currentVertex][i];
+                        if (newDist < distances[i]) {
+                            distances[i] = newDist;
+                            predecessors[i] = currentVertex;
+                            pq.add(new VertexDistancePair(i, newDist));
+                        }
+                    }
                 }
             }
-        }
 
-        List<Vertex> path = new ArrayList<>();
-        for (Vertex at = target; at != null; at = predecessors.get(at)) {
-            path.add(at);
-        }
-        Collections.reverse(path);
-        String pathStr = path.toString().replaceAll("[\\[\\]]", "");
-        int totalDistance = distances.get(target);
+            List<Integer> path = new ArrayList<>();
+            for (int at = assemblyPoint; at != -1; at = predecessors[at]) {
+                path.add(at);
+            }
+            Collections.reverse(path);
+            String pathStr = path.toString().replaceAll("[\\[\\]]", "").replace(",", " ->");
+            double pathCost = distances[assemblyPoint];
 
-        return new PathInfo(pathStr, totalDistance);
+            results[k] = new PathInfo(pathStr, pathCost);
+        }
+        return results;
+    }
+
+    private static class VertexDistancePair {
+        int vertex;
+        double distance;
+
+        VertexDistancePair(int vertex, double distance) {
+            this.vertex = vertex;
+            this.distance = distance;
+        }
     }
 }

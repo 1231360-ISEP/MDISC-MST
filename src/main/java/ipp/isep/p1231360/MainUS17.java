@@ -1,5 +1,6 @@
 package ipp.isep.p1231360;
 
+import org.graphstream.graph.Graph;
 import org.graphstream.graph.implementations.SingleGraph;
 import org.graphstream.stream.file.FileSinkDOT;
 
@@ -36,23 +37,16 @@ public class MainUS17 {
         int[] signPointsArray = signPoints.stream().mapToInt(Integer::intValue).toArray();
         PathInfo[] paths = Dijkstra.dijkstra(graphMatrix, signPointsArray, assemblyPoint);
 
-        File outputCSVFile = new File(OUTPUT_CSV_PATH);
-        if (!outputCSVFile.exists()) outputCSVFile.createNewFile();
+        // Encontra o caminho de menor custo entre os pontos de sinalização e o ponto de montagem
+        PathInfo shortestPath = findShortestPath(paths);
 
-        if (!outputCSVFile.isFile() || !outputCSVFile.canWrite()) {
-            throw new FileNotFoundException(OUTPUT_CSV_PATH + " file not found");
-        }
+        // Escreve os caminhos no arquivo de saída
+        writePathsToFile(paths, shortestPath);
 
-        try (Writer outputCSVFileWriter = new FileWriter(outputCSVFile)) {
-            for (PathInfo pathInfo : paths) {
-                outputCSVFileWriter.write(pathInfo.path + "; " + pathInfo.distance + "\n");
-            }
-        }
-
-        org.graphstream.graph.Graph graph = new SingleGraph("Graph");
+        Graph graph = new SingleGraph("Graph");
 
         for (int i = 0; i < pointNames.length; i++) {
-            graph.addNode(pointNames[i]);
+            graph.addNode(pointNames[i]).setAttribute("ui.label", pointNames[i]);
         }
 
         for (int i = 0; i < graphMatrix.length; i++) {
@@ -65,11 +59,53 @@ public class MainUS17 {
             }
         }
 
+        // Sublinhe o caminho com cor vermelha
+        String[] shortestPathNodes = shortestPath.path.split(" -> ");
+        for (int i = 0; i < shortestPathNodes.length - 1; i++) {
+            String edgeId = shortestPathNodes[i] + "-" + shortestPathNodes[i + 1];
+            if (graph.getEdge(edgeId) != null) {
+                graph.getEdge(edgeId).setAttribute("color", "red");
+            } else {
+                // Verifica se a direção inversa da aresta existe
+                edgeId = shortestPathNodes[i + 1] + "-" + shortestPathNodes[i];
+                if (graph.getEdge(edgeId) != null) {
+                    graph.getEdge(edgeId).setAttribute("color", "red");
+                }
+            }
+        }
+
         FileSinkDOT sink = new FileSinkDOT();
         sink.writeAll(graph, GRAPH_PATH);
 
-        String dotPath = "\"C:\\Program Files\\Graphviz-11.0.0-win64\\bin\\dot.exe\"";
-        String[] command = {dotPath, "-Tpng", GRAPH_PATH, "-o", PATH_IMAGE_PATH};
+        String[] command = {"dot", "-Tpng", GRAPH_PATH, "-o", PATH_IMAGE_PATH};
         Runtime.getRuntime().exec(command);
+    }
+
+    private static PathInfo findShortestPath(PathInfo[] paths) {
+        PathInfo shortestPath = paths[0]; // Assume o primeiro como o mais curto inicialmente
+        for (int i = 1; i < paths.length; i++) {
+            if (paths[i].distance < shortestPath.distance) {
+                shortestPath = paths[i];
+            }
+        }
+        return shortestPath;
+    }
+
+    private static void writePathsToFile(PathInfo[] paths, PathInfo shortestPath) throws IOException {
+        File outputCSVFile = new File(OUTPUT_CSV_PATH);
+        if (!outputCSVFile.exists()) outputCSVFile.createNewFile();
+
+        if (!outputCSVFile.isFile() || !outputCSVFile.canWrite()) {
+            throw new FileNotFoundException(OUTPUT_CSV_PATH + " file not found");
+        }
+
+        try (Writer outputCSVFileWriter = new FileWriter(outputCSVFile)) {
+            for (PathInfo pathInfo : paths) {
+                outputCSVFileWriter.write(pathInfo.path + ". Cost: " + pathInfo.distance + "\n");
+            }
+
+            // Adiciona a linha extra com o caminho de menor custo
+            outputCSVFileWriter.write("\nShortest Path: " + shortestPath.path + ". Cost: " + shortestPath.distance);
+        }
     }
 }

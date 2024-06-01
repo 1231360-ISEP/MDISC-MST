@@ -4,46 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea4e7b36-7b25-4ea0-aabd-61b1d2c2b40a" name="Changes" comment="Updated mainus17 with new dotPath">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/MainUS18.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/in/us13/segunda_feira.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="ea4e7b36-7b25-4ea0-aabd-61b1d2c2b40a" name="Changes" comment="Adição da nova US18 and modificação da US17 Main">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/DijkstraMultiAP.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/FilesUS17.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/FilesUS17.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/MainUS13.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/MainUS13.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/MainUS14.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/MainUS14.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/MainUS17.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/MainUS17.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/parametros.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_1.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_10.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_10.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_11.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_11.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_12.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_12.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_13.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_13.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_14.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_14.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_15.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_15.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_16.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_16.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_17.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_17.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_18.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_18.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_19.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_19.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_2.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_20.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_20.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_21.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_21.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_22.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_22.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_23.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_23.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_24.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_24.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_25.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_25.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_26.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_26.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_27.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_27.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_28.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_28.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_29.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_29.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_3.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_3.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_30.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_30.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_4.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_4.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_5.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_5.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_6.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_6.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_7.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_7.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_8.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_8.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_9.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_9.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/MainUS18.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/MainUS18.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +70,7 @@
       <recent name="ipp.isep.p1231360" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MainUS17">
+  <component name="RunManager" selected="Application.MainUS18">
     <configuration default="true" type="DjangoTestsConfigurationType">
       <module name="MDISC-MST" />
       <option name="ENV_FILES" value="" />
@@ -252,8 +217,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainUS17" />
         <item itemvalue="Application.MainUS18" />
+        <item itemvalue="Application.MainUS17" />
         <item itemvalue="Application.MainUS17 (1)" />
         <item itemvalue="Application.MainUS14" />
       </list>
@@ -287,7 +252,7 @@
       <workItem from="1716997894595" duration="5000" />
       <workItem from="1717249471854" duration="930000" />
       <workItem from="1717250428744" duration="619000" />
-      <workItem from="1717255968444" duration="3247000" />
+      <workItem from="1717255968444" duration="5196000" />
     </task>
     <task id="LOCAL-00001" summary="Add us17 update graph with new methods and files change the addEdge directly">
       <option name="closed" value="true" />
@@ -313,7 +278,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716933186815</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Adição da nova US18 and modificação da US17 Main">
+      <option name="closed" value="true" />
+      <created>1717259405405</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1717259405405</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,6 +296,7 @@
     <MESSAGE value="Add us17 update graph with new methods and files change the addEdge directly" />
     <MESSAGE value="Add new input files to the project&#10;Add new file FilesUS17 to read the new input files&#10;Updated the Dijkstra, PathInfo and MainUS17" />
     <MESSAGE value="Updated mainus17 with new dotPath" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated mainus17 with new dotPath" />
+    <MESSAGE value="Adição da nova US18 and modificação da US17 Main" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adição da nova US18 and modificação da US17 Main" />
   </component>
 </project>

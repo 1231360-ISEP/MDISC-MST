@@ -56,7 +56,7 @@ public class MainUS17 {
         PathInfo shortestPath = findShortestPath(paths);
 
         // Escreve os caminhos no arquivo de saída
-        writePathsToFile(paths, shortestPath);
+        writePathsToFile(paths, shortestPath, pointNames);
 
         Graph graph = new SingleGraph("Graph");
 
@@ -106,7 +106,7 @@ public class MainUS17 {
         return shortestPath;
     }
 
-    private static void writePathsToFile(PathInfo[] paths, PathInfo shortestPath) throws IOException {
+    private static void writePathsToFile(PathInfo[] paths, PathInfo shortestPath, String[] pointNames) throws IOException {
         File outputCSVFile = new File(OUTPUT_CSV_PATH);
         if (!outputCSVFile.exists()) outputCSVFile.createNewFile();
 
@@ -116,11 +116,26 @@ public class MainUS17 {
 
         try (Writer outputCSVFileWriter = new FileWriter(outputCSVFile)) {
             for (PathInfo pathInfo : paths) {
-                outputCSVFileWriter.write(pathInfo.path + ". Cost: " + pathInfo.distance + "\n");
+                String namedPath = replaceIndicesWithNames(pathInfo.path, pointNames);
+                outputCSVFileWriter.write(namedPath + ". Cost: " + pathInfo.distance + "\n");
             }
 
             // Adiciona a linha extra com o caminho de menor custo
-            outputCSVFileWriter.write("\nShortest Path: " + shortestPath.path + ". Cost: " + shortestPath.distance);
+            String namedShortestPath = replaceIndicesWithNames(shortestPath.path, pointNames);
+            outputCSVFileWriter.write("\nShortest Path: " + namedShortestPath + ". Cost: " + shortestPath.distance);
         }
+    }
+
+    private static String replaceIndicesWithNames(String path, String[] pointNames) {
+        StringBuilder namedPath = new StringBuilder();
+        String[] indices = path.split(" -> ");
+        for (String index : indices) {
+            int idx = Integer.parseInt(index.trim());
+            if (namedPath.length() > 0) {
+                namedPath.append(" -> ");
+            }
+            namedPath.append(pointNames[idx]);
+        }
+        return namedPath.toString();
     }
 }

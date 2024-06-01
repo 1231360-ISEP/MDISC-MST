@@ -6,8 +6,16 @@ import java.util.Scanner;
 
 public class FilesUS17 {
     public static double[][] readMatrix(File file) throws FileNotFoundException {
+        int size = 0;
+        Scanner lineCounter = new Scanner(new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8));
+        while (lineCounter.hasNextLine()) {
+            lineCounter.nextLine();
+            size++;
+        }
+        lineCounter.close();
+
+        double[][] matrix = new double[size][size];
         Scanner scanner = new Scanner(new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8));
-        double[][] matrix = new double[18][18];
         int i = 0;
         while (scanner.hasNextLine()) {
             String line = scanner.nextLine().replace("\uFEFF", ""); // Remove BOM if present
@@ -18,6 +26,7 @@ public class FilesUS17 {
             i++;
         }
         scanner.close();
+
         return matrix;
     }
 

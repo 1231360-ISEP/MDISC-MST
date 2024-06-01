@@ -132,5 +132,15 @@ public class MainUS13 {
         String[] command2 = { "dot", "-Tpng", SUB_GRAPH_PATH, "-o", SUB_GRAPH_IMAGE_PATH };
         Runtime.getRuntime().exec(command1);
         Runtime.getRuntime().exec(command2);
+
+        Scanner scanner = new Scanner(new File("src/main/resources/out/us13/sub-graph.csv"));
+        int costT = 0;
+        while (scanner.hasNextLine()) {
+            String[] data = scanner.nextLine().split(";");
+
+            costT+= Integer.parseInt(data[2].trim());
+
+        }
+        System.out.println(costT);
     }
 }

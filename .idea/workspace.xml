@@ -5,8 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea4e7b36-7b25-4ea0-aabd-61b1d2c2b40a" name="Changes" comment="Updated mainus17 with new dotPath">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/MainUS18.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/in/us13/segunda_feira.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/FilesUS17.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/FilesUS17.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/MainUS13.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/MainUS13.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/MainUS14.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/MainUS14.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/MainUS17.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/MainUS17.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/parametros.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_1.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_10.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_10.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_11.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_11.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_12.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_12.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_13.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_13.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_14.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_14.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_15.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_15.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_16.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_16.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_17.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_17.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_18.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_18.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_19.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_19.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_2.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_20.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_20.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_21.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_21.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_22.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_22.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_23.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_23.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_24.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_24.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_25.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_25.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_26.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_26.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_27.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_27.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_28.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_28.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_29.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_29.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_3.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_3.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_30.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_30.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_4.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_4.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_5.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_5.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_6.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_6.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_7.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_7.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_8.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_8.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/in/us14/us14_9.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/in/us14/fx_2feira_9.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,24 +74,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.MainUS14.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MainUS17 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Application.MainUS17.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/dinis/OneDrive/Ambiente de Trabalho/MDISC-MST/src/main/resources/out&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.MainUS14.executor": "Run",
+    "Application.MainUS17 (1).executor": "Run",
+    "Application.MainUS17.executor": "Run",
+    "Application.MainUS18.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/dinis/OneDrive/Ambiente de Trabalho/MDISC-MST/src/main/resources/out",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\dinis\OneDrive\Ambiente de Trabalho\MDISC-MST\src\main\resources\out" />
@@ -68,39 +106,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.MainUS17">
-    <configuration name="MainUS14" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ipp.isep.p1231360.MainUS14" />
-      <module name="Kruskal" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ipp.isep.p1231360.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainUS17 (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MainUS17" />
-      <module name="Kruskal" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainUS17" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ipp.isep.p1231360.MainUS17" />
-      <module name="Kruskal" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ipp.isep.p1231360.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="DjangoTestsConfigurationType">
       <module name="MDISC-MST" />
       <option name="ENV_FILES" value="" />
@@ -121,19 +126,6 @@
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
       <method v="2" />
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="MDISC-MST" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="MDISC-MST" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
       <module name="MDISC-MST" />
@@ -199,9 +191,69 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <method v="2" />
     </configuration>
+    <configuration name="MainUS14" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ipp.isep.p1231360.MainUS14" />
+      <module name="Kruskal" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ipp.isep.p1231360.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainUS17 (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainUS17" />
+      <module name="Kruskal" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainUS17" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ipp.isep.p1231360.MainUS17" />
+      <module name="Kruskal" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ipp.isep.p1231360.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainUS18" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ipp.isep.p1231360.MainUS18" />
+      <module name="Kruskal" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ipp.isep.p1231360.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="MDISC-MST" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="MDISC-MST" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainUS17" />
+        <item itemvalue="Application.MainUS18" />
         <item itemvalue="Application.MainUS17 (1)" />
         <item itemvalue="Application.MainUS14" />
       </list>
@@ -210,7 +262,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
       </set>
     </attachedChunks>
   </component>
@@ -234,6 +287,7 @@
       <workItem from="1716997894595" duration="5000" />
       <workItem from="1717249471854" duration="930000" />
       <workItem from="1717250428744" duration="619000" />
+      <workItem from="1717255968444" duration="3247000" />
     </task>
     <task id="LOCAL-00001" summary="Add us17 update graph with new methods and files change the addEdge directly">
       <option name="closed" value="true" />

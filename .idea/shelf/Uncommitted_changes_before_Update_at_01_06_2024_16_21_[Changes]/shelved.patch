@@ -1,0 +1,176 @@
+Index: src/main/java/ipp/isep/p1231360/MainUS14.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ipp.isep.p1231360;\r\n\r\nimport java.io.*;\r\nimport java.util.Collections;\r\nimport java.util.Scanner;\r\n\r\npublic class MainUS14 {\r\n    private static final String INPUT_PATH = \"src/main/resources/in/us14\";\r\n    private static final String OUTPUT_PATH = \"src/main/resources/out/us14\";\r\n    private static final String OUTPUT_CSV_PATH = OUTPUT_PATH + \"/us14.csv\";\r\n    private static final String GNUPLOT_TEMPLATE_PATH = \"src/main/resources/gnuplot_chart.p\";\r\n    private static final int REPETITION_COUNT = 10;\r\n\r\n    public static void main(String[] args) throws IOException {\r\n        File dir = new File(INPUT_PATH);\r\n\r\n        if(!dir.isDirectory())\r\n            throw new FileNotFoundException(INPUT_PATH + \" directory not found\");\r\n\r\n        File outputDir = new File(OUTPUT_PATH);\r\n\r\n        if (!outputDir.exists())\r\n            outputDir.mkdirs();\r\n\r\n        if (!outputDir.isDirectory())\r\n            throw new FileNotFoundException(OUTPUT_PATH + \" directory not found\");\r\n\r\n        File[] files = dir.listFiles(new FileFilter() {\r\n            @Override\r\n            public boolean accept(File pathname) {\r\n                if(!pathname.isFile())\r\n                    return false;\r\n\r\n                if(!pathname.canRead())\r\n                    return false;\r\n\r\n                if(!pathname.getName().startsWith(\"us14_\"))\r\n                    return false;\r\n\r\n                if(!pathname.getName().endsWith(\".csv\"))\r\n                    return false;\r\n\r\n                return true;\r\n            }\r\n        });\r\n\r\n        if (files == null)\r\n            return;\r\n\r\n        double totalSum = 0;\r\n\r\n        File outputFile = new File(OUTPUT_CSV_PATH);\r\n\r\n        if (!outputFile.exists())\r\n            outputFile.createNewFile();\r\n\r\n        if (!outputFile.isFile())\r\n            throw new FileNotFoundException(OUTPUT_CSV_PATH + \" file not found\");\r\n\r\n        FileWriter fileOut = new FileWriter(outputFile);\r\n\r\n        for (File file : files) {\r\n            Graph graph = new Graph();\r\n\r\n            System.out.printf(\"File: %s%n\", file.getName());\r\n\r\n            double sum = 0;\r\n            int cost = 0;\r\n\r\n            for (int i = 0; i < REPETITION_COUNT; i++) {\r\n                graph = new Graph();\r\n\r\n                Scanner fileIn = new Scanner(file);\r\n\r\n                Files.readFile(fileIn, graph);\r\n\r\n                fileIn.close();\r\n\r\n                long startTime = System.nanoTime();\r\n\r\n                Collections.sort(graph.edgeList);\r\n\r\n                cost = Kruskal.kruskalCost(graph);\r\n\r\n                long endTime = System.nanoTime();\r\n\r\n                sum += endTime - startTime;\r\n            }\r\n\r\n            System.out.printf(\r\n                    \"Graph Dimension = %d : Graph Order = %d : Minimum cost = %d%n\",\r\n                    graph.edgeList.size(),\r\n                    graph.vertexList.size(),\r\n                    cost\r\n            );\r\n\r\n            totalSum += sum / REPETITION_COUNT;\r\n\r\n            System.out.printf(\"Average execution time: %f ms%n\", sum / REPETITION_COUNT * 1e-6);\r\n\r\n            fileOut.append(String.format(\"%d;%f%n\", graph.edgeList.size(), sum / REPETITION_COUNT * 1e-6));\r\n        }\r\n\r\n        fileOut.close();\r\n\r\n        System.out.printf(\"%n%nTotal average execution time: %f ms%n\", totalSum / files.length * 1e-6);\r\n\r\n        String[] command = { \"gnuplot\", GNUPLOT_TEMPLATE_PATH };\r\n        Runtime.getRuntime().exec(command);\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/ipp/isep/p1231360/MainUS14.java b/src/main/java/ipp/isep/p1231360/MainUS14.java
+--- a/src/main/java/ipp/isep/p1231360/MainUS14.java	(revision 869e6f0e4d216af9d71362e50812d487d9dd4f54)
++++ b/src/main/java/ipp/isep/p1231360/MainUS14.java	(date 1715610391948)
+@@ -34,7 +34,7 @@
+                 if(!pathname.canRead())
+                     return false;
+ 
+-                if(!pathname.getName().startsWith("us14_"))
++                if(!pathname.getName().startsWith("fx_2feira_"))
+                     return false;
+ 
+                 if(!pathname.getName().endsWith(".csv"))
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_22\" default=\"true\" project-jdk-name=\"openjdk-22\" project-jdk-type=\"JavaSDK\" />\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 869e6f0e4d216af9d71362e50812d487d9dd4f54)
++++ b/.idea/misc.xml	(date 1715598657854)
+@@ -8,5 +8,5 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_22" default="true" project-jdk-name="openjdk-22" project-jdk-type="JavaSDK" />
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="21" project-jdk-type="JavaSDK" />
+ </project>
+\ No newline at end of file
+Index: src/main/resources/in/us13/segunda_feira.csv
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/in/us13/segunda_feira.csv b/src/main/resources/in/us13/segunda_feira.csv
+new file mode 100644
+--- /dev/null	(date 1715607464000)
++++ b/src/main/resources/in/us13/segunda_feira.csv	(date 1715607464000)
+@@ -0,0 +1,12 @@
++1;5;7
++1;2;3
++1;3;4
++1;4;4
++2;5;8
++2;6;10
++2;3;1
++3;5;6
++3;6;10
++3;4;13
++4;6;15
++5;6;9
+\ No newline at end of file
+Index: src/main/java/ipp/isep/p1231360/MainUS13.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ipp.isep.p1231360;\r\n\r\nimport org.graphstream.graph.implementations.SingleGraph;\r\nimport org.graphstream.stream.file.FileSinkDOT;\r\n\r\nimport java.io.*;\r\nimport java.util.ArrayList;\r\nimport java.util.Collections;\r\nimport java.util.List;\r\nimport java.util.Scanner;\r\n\r\npublic class MainUS13 {\r\n    private static final String INPUT_PATH = \"src/main/resources/in/us13\";\r\n    private static final String OUTPUT_PATH = \"src/main/resources/out/us13\";\r\n    private static final String OUTPUT_CSV_PATH = OUTPUT_PATH + \"/sub-graph.csv\";\r\n    private static final String GRAPH_PATH = OUTPUT_PATH + \"/graph.gv\";\r\n    private static final String SUB_GRAPH_PATH = OUTPUT_PATH + \"/sub-graph.gv\";\r\n    private static final String GRAPH_IMAGE_PATH = OUTPUT_PATH + \"/graph.png\";\r\n    private static final String SUB_GRAPH_IMAGE_PATH = OUTPUT_PATH + \"/sub-graph.png\";\r\n\r\n    public static void main(String[] args) throws IOException {\r\n        File dir = new File(INPUT_PATH);\r\n\r\n        if(!dir.isDirectory())\r\n            throw new FileNotFoundException(INPUT_PATH + \" directory not found\");\r\n\r\n        File outputDir = new File(OUTPUT_PATH);\r\n\r\n        if (!outputDir.exists())\r\n            outputDir.mkdirs();\r\n\r\n        if (!outputDir.isDirectory())\r\n            throw new FileNotFoundException(OUTPUT_PATH + \" directory not found\");\r\n\r\n        File[] files = dir.listFiles(new FileFilter() {\r\n            @Override\r\n            public boolean accept(File pathname) {\r\n                if(!pathname.isFile())\r\n                    return false;\r\n\r\n                if(!pathname.canRead())\r\n                    return false;\r\n\r\n                if(!pathname.getName().endsWith(\".csv\"))\r\n                    return false;\r\n\r\n                return true;\r\n            }\r\n        });\r\n\r\n        if (files == null || files.length < 1)\r\n            return;\r\n\r\n        int option = 0;\r\n\r\n        do {\r\n            for (int i = 0; i < files.length; i++) {\r\n                System.out.printf(\"%3d: %s%n\", i + 1, files[i].getName());\r\n            }\r\n\r\n            Scanner in = new Scanner(System.in);\r\n\r\n            System.out.print(\"Option: \");\r\n\r\n            option = in.nextInt();\r\n        } while(option < 1 || option > files.length);\r\n\r\n        File file = files[option - 1];\r\n\r\n        Scanner fileIn = new Scanner(file);\r\n\r\n        FileSinkDOT sink = new FileSinkDOT();\r\n\r\n        Graph graph = new Graph();\r\n\r\n        Files.readFile(fileIn, graph);\r\n        \r\n        org.graphstream.graph.Graph originalGraph = new SingleGraph(\"Original graph\");\r\n        org.graphstream.graph.Graph subGraph = new SingleGraph(\"Sub graph\");\r\n\r\n        for (Vertex vertex : graph.vertexList) {\r\n            originalGraph.addNode(vertex.toString());\r\n            subGraph.addNode(vertex.toString());\r\n        }\r\n\r\n        for (Edge edge : graph.edgeList) {\r\n            org.graphstream.graph.Edge graphEdge = originalGraph.addEdge(edge.toString(), edge.getStart().toString(), edge.getEnd().toString());\r\n            graphEdge.setAttribute(\"distance\", edge.getDistance());\r\n            graphEdge.setAttribute(\"label\", edge.getDistance());\r\n        }\r\n\r\n        Collections.sort(graph.edgeList);\r\n\r\n        Edge[] subGraphEdgeList = Kruskal.kruskalSubGraph(graph);\r\n\r\n        File outputCSVFile = new File(OUTPUT_CSV_PATH);\r\n\r\n        if (!outputCSVFile.exists())\r\n            outputCSVFile.createNewFile();\r\n\r\n        if (!outputCSVFile.isFile() || !outputCSVFile.canWrite())\r\n            throw new FileNotFoundException(OUTPUT_CSV_PATH + \" file not found\");\r\n\r\n        Writer outputCSVFileWriter = new FileWriter(outputCSVFile);\r\n\r\n        for (Edge edge : subGraphEdgeList)\r\n            if (edge != null)\r\n                outputCSVFileWriter.append(String.format(\"%s;%s;%d%n\", edge.getStart().toString(), edge.getEnd().toString(), edge.getDistance()));\r\n\r\n        outputCSVFileWriter.close();\r\n\r\n        for (Edge edge : subGraphEdgeList)\r\n            if (edge != null) {\r\n                org.graphstream.graph.Edge graphEdge = subGraph.addEdge(edge.toString(), edge.getStart().toString(), edge.getEnd().toString());\r\n                graphEdge.setAttribute(\"distance\", edge.getDistance());\r\n                graphEdge.setAttribute(\"label\", edge.getDistance());\r\n            }\r\n\r\n        originalGraph.edges().forEach(edge -> {\r\n            subGraph.edges().forEach(subEdge -> {\r\n                if (edge.getId().equals(subEdge.getId()))\r\n                    edge.setAttribute(\"color\", \"red\");\r\n            });\r\n        });\r\n\r\n        List<Integer> numeros = new ArrayList<>();\r\n\r\n        sink.writeAll(originalGraph, GRAPH_PATH);\r\n        sink.writeAll(subGraph, SUB_GRAPH_PATH);\r\n\r\n        String[] command1 = { \"dot\", \"-Tpng\", GRAPH_PATH, \"-o\", GRAPH_IMAGE_PATH };\r\n        String[] command2 = { \"dot\", \"-Tpng\", SUB_GRAPH_PATH, \"-o\", SUB_GRAPH_IMAGE_PATH };\r\n        Runtime.getRuntime().exec(command1);\r\n        Runtime.getRuntime().exec(command2);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/ipp/isep/p1231360/MainUS13.java b/src/main/java/ipp/isep/p1231360/MainUS13.java
+--- a/src/main/java/ipp/isep/p1231360/MainUS13.java	(revision 869e6f0e4d216af9d71362e50812d487d9dd4f54)
++++ b/src/main/java/ipp/isep/p1231360/MainUS13.java	(date 1715610270197)
+@@ -132,5 +132,15 @@
+         String[] command2 = { "dot", "-Tpng", SUB_GRAPH_PATH, "-o", SUB_GRAPH_IMAGE_PATH };
+         Runtime.getRuntime().exec(command1);
+         Runtime.getRuntime().exec(command2);
++
++        Scanner scanner = new Scanner(new File("src/main/resources/out/us13/sub-graph.csv"));
++        int costT = 0;
++        while (scanner.hasNextLine()) {
++            String[] data = scanner.nextLine().split(";");
++
++            costT+= Integer.parseInt(data[2].trim());
++
++        }
++        System.out.println(costT);
+     }
+ }
+diff --git a/src/main/resources/in/us14/us14_1.csv b/src/main/resources/in/us14/fx_2feira_1.csv
+rename from src/main/resources/in/us14/us14_1.csv
+rename to src/main/resources/in/us14/fx_2feira_1.csv
+diff --git a/src/main/resources/in/us14/us14_30.csv b/src/main/resources/in/us14/fx_2feira_30.csv
+rename from src/main/resources/in/us14/us14_30.csv
+rename to src/main/resources/in/us14/fx_2feira_30.csv
+diff --git a/src/main/resources/in/us14/us14_3.csv b/src/main/resources/in/us14/fx_2feira_3.csv
+rename from src/main/resources/in/us14/us14_3.csv
+rename to src/main/resources/in/us14/fx_2feira_3.csv
+diff --git a/src/main/resources/in/us14/us14_2.csv b/src/main/resources/in/us14/fx_2feira_2.csv
+rename from src/main/resources/in/us14/us14_2.csv
+rename to src/main/resources/in/us14/fx_2feira_2.csv
+diff --git a/src/main/resources/in/us14/us14_5.csv b/src/main/resources/in/us14/fx_2feira_5.csv
+rename from src/main/resources/in/us14/us14_5.csv
+rename to src/main/resources/in/us14/fx_2feira_5.csv
+diff --git a/src/main/resources/in/us14/us14_4.csv b/src/main/resources/in/us14/fx_2feira_4.csv
+rename from src/main/resources/in/us14/us14_4.csv
+rename to src/main/resources/in/us14/fx_2feira_4.csv
+diff --git a/src/main/resources/in/us14/us14_7.csv b/src/main/resources/in/us14/fx_2feira_7.csv
+rename from src/main/resources/in/us14/us14_7.csv
+rename to src/main/resources/in/us14/fx_2feira_7.csv
+diff --git a/src/main/resources/in/us14/us14_6.csv b/src/main/resources/in/us14/fx_2feira_6.csv
+rename from src/main/resources/in/us14/us14_6.csv
+rename to src/main/resources/in/us14/fx_2feira_6.csv
+diff --git a/src/main/resources/in/us14/us14_9.csv b/src/main/resources/in/us14/fx_2feira_9.csv
+rename from src/main/resources/in/us14/us14_9.csv
+rename to src/main/resources/in/us14/fx_2feira_9.csv
+diff --git a/src/main/resources/in/us14/us14_8.csv b/src/main/resources/in/us14/fx_2feira_8.csv
+rename from src/main/resources/in/us14/us14_8.csv
+rename to src/main/resources/in/us14/fx_2feira_8.csv
+diff --git a/src/main/resources/in/us14/us14_11.csv b/src/main/resources/in/us14/fx_2feira_11.csv
+rename from src/main/resources/in/us14/us14_11.csv
+rename to src/main/resources/in/us14/fx_2feira_11.csv
+diff --git a/src/main/resources/in/us14/us14_10.csv b/src/main/resources/in/us14/fx_2feira_10.csv
+rename from src/main/resources/in/us14/us14_10.csv
+rename to src/main/resources/in/us14/fx_2feira_10.csv
+diff --git a/src/main/resources/in/us14/us14_13.csv b/src/main/resources/in/us14/fx_2feira_13.csv
+rename from src/main/resources/in/us14/us14_13.csv
+rename to src/main/resources/in/us14/fx_2feira_13.csv
+diff --git a/src/main/resources/in/us14/us14_12.csv b/src/main/resources/in/us14/fx_2feira_12.csv
+rename from src/main/resources/in/us14/us14_12.csv
+rename to src/main/resources/in/us14/fx_2feira_12.csv
+diff --git a/src/main/resources/in/us14/us14_15.csv b/src/main/resources/in/us14/fx_2feira_15.csv
+rename from src/main/resources/in/us14/us14_15.csv
+rename to src/main/resources/in/us14/fx_2feira_15.csv
+diff --git a/src/main/resources/in/us14/us14_14.csv b/src/main/resources/in/us14/fx_2feira_14.csv
+rename from src/main/resources/in/us14/us14_14.csv
+rename to src/main/resources/in/us14/fx_2feira_14.csv
+diff --git a/src/main/resources/in/us14/us14_17.csv b/src/main/resources/in/us14/fx_2feira_17.csv
+rename from src/main/resources/in/us14/us14_17.csv
+rename to src/main/resources/in/us14/fx_2feira_17.csv
+diff --git a/src/main/resources/in/us14/us14_16.csv b/src/main/resources/in/us14/fx_2feira_16.csv
+rename from src/main/resources/in/us14/us14_16.csv
+rename to src/main/resources/in/us14/fx_2feira_16.csv
+diff --git a/src/main/resources/in/us14/us14_19.csv b/src/main/resources/in/us14/fx_2feira_19.csv
+rename from src/main/resources/in/us14/us14_19.csv
+rename to src/main/resources/in/us14/fx_2feira_19.csv
+diff --git a/src/main/resources/in/us14/us14_18.csv b/src/main/resources/in/us14/fx_2feira_18.csv
+rename from src/main/resources/in/us14/us14_18.csv
+rename to src/main/resources/in/us14/fx_2feira_18.csv
+diff --git a/src/main/resources/in/us14/us14_21.csv b/src/main/resources/in/us14/fx_2feira_21.csv
+rename from src/main/resources/in/us14/us14_21.csv
+rename to src/main/resources/in/us14/fx_2feira_21.csv
+diff --git a/src/main/resources/in/us14/us14_20.csv b/src/main/resources/in/us14/fx_2feira_20.csv
+rename from src/main/resources/in/us14/us14_20.csv
+rename to src/main/resources/in/us14/fx_2feira_20.csv
+diff --git a/src/main/resources/in/us14/us14_23.csv b/src/main/resources/in/us14/fx_2feira_23.csv
+rename from src/main/resources/in/us14/us14_23.csv
+rename to src/main/resources/in/us14/fx_2feira_23.csv
+diff --git a/src/main/resources/in/us14/us14_22.csv b/src/main/resources/in/us14/fx_2feira_22.csv
+rename from src/main/resources/in/us14/us14_22.csv
+rename to src/main/resources/in/us14/fx_2feira_22.csv
+diff --git a/src/main/resources/in/us14/us14_25.csv b/src/main/resources/in/us14/fx_2feira_25.csv
+rename from src/main/resources/in/us14/us14_25.csv
+rename to src/main/resources/in/us14/fx_2feira_25.csv
+diff --git a/src/main/resources/in/us14/us14_24.csv b/src/main/resources/in/us14/fx_2feira_24.csv
+rename from src/main/resources/in/us14/us14_24.csv
+rename to src/main/resources/in/us14/fx_2feira_24.csv
+diff --git a/src/main/resources/in/us14/us14_27.csv b/src/main/resources/in/us14/fx_2feira_27.csv
+rename from src/main/resources/in/us14/us14_27.csv
+rename to src/main/resources/in/us14/fx_2feira_27.csv
+diff --git a/src/main/resources/in/us14/us14_26.csv b/src/main/resources/in/us14/fx_2feira_26.csv
+rename from src/main/resources/in/us14/us14_26.csv
+rename to src/main/resources/in/us14/fx_2feira_26.csv
+diff --git a/src/main/resources/in/us14/us14_29.csv b/src/main/resources/in/us14/fx_2feira_29.csv
+rename from src/main/resources/in/us14/us14_29.csv
+rename to src/main/resources/in/us14/fx_2feira_29.csv
+diff --git a/src/main/resources/in/us14/us14_28.csv b/src/main/resources/in/us14/fx_2feira_28.csv
+rename from src/main/resources/in/us14/us14_28.csv
+rename to src/main/resources/in/us14/fx_2feira_28.csv

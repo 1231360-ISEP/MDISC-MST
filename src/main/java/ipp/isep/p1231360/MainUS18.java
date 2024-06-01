@@ -8,14 +8,14 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainUS17 {
-    private static final String INPUT_PATH = "src/main/resources/in/us17";
-    private static final String OUTPUT_PATH = "src/main/resources/out/us17";
-    private static final String INPUT_MATRIX_PATH = INPUT_PATH + "/us17_matrix.csv";
-    private static final String INPUT_NAMES_PATH = INPUT_PATH + "/us17_points_names.csv";
-    private static final String OUTPUT_CSV_PATH = OUTPUT_PATH + "/shortest_paths.csv";
-    private static final String GRAPH_PATH = OUTPUT_PATH + "/graph.gv";
-    private static final String PATH_IMAGE_PATH = OUTPUT_PATH + "/path.png";
+public class MainUS18 {
+    private static final String INPUT_PATH = "src/main/resources/in/us18";
+    private static final String OUTPUT_PATH = "src/main/resources/out/us18";
+    private static final String INPUT_MATRIX_PATH = "src/main/resources/in/us18/us18_matrix.csv";
+    private static final String INPUT_NAMES_PATH = "src/main/resources/in/us18/us18_points_names.csv";
+    private static final String OUTPUT_CSV_PATH = "src/main/resources/out/us18/shortest_paths.csv";
+    private static final String GRAPH_PATH = "src/main/resources/out/us18/graph.gv";
+    private static final String PATH_IMAGE_PATH = "src/main/resources/out/us18/path.png";
 
     public static void main(String[] args) throws IOException {
         File dir = new File(INPUT_PATH);
@@ -74,7 +74,7 @@ public class MainUS17 {
             }
         }
 
-        // Sublinhe o caminho com cor vermelha
+        // Sublinhe o caminho com cor vermelha (NÃO FUNCIONA)
         String[] shortestPathNodes = shortestPath.path.split(" -> ");
         for (int i = 0; i < shortestPathNodes.length - 1; i++) {
             String edgeId = shortestPathNodes[i] + "-" + shortestPathNodes[i + 1];
@@ -97,7 +97,7 @@ public class MainUS17 {
     }
 
     private static PathInfo findShortestPath(PathInfo[] paths) {
-        PathInfo shortestPath = paths[0]; // Assume o primeiro como o mais curto inicialmente
+        PathInfo shortestPath = paths[0];
         for (int i = 1; i < paths.length; i++) {
             if (paths[i].distance < shortestPath.distance) {
                 shortestPath = paths[i];

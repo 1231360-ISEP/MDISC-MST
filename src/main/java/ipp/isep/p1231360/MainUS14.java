@@ -34,7 +34,7 @@ public class MainUS14 {
                 if(!pathname.canRead())
                     return false;
 
-                if(!pathname.getName().startsWith("us14_"))
+                if(!pathname.getName().startsWith("fx_2feira_"))
                     return false;
 
                 if(!pathname.getName().endsWith(".csv"))

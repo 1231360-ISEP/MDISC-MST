@@ -9,6 +9,7 @@ public class PathInfo {
         this.distance = distance;
     }
 
+    // Método ToString para esscrever o caminho e a distância no ficheiro .csv de output
     @Override
     public String toString() {
         return "Path: " + path + ", Distance: " + distance;

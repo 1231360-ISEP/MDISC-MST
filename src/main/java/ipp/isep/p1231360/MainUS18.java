@@ -20,23 +20,27 @@ public class MainUS18 {
     public static void main(String[] args) throws IOException {
         File dir = new File(INPUT_PATH);
 
+        // Verificar se o diretório existe ou é encontrado
         if (!dir.isDirectory())
             throw new FileNotFoundException(INPUT_PATH + " directory not found");
 
         File outputDir = new File(OUTPUT_PATH);
 
+        // Verificar se o diretório de output existe ou é encontrado
         if (!outputDir.exists())
             outputDir.mkdirs();
 
         if (!outputDir.isDirectory())
             throw new FileNotFoundException(OUTPUT_PATH + " directory not found");
 
+        // Ler os ficheiros de input
         double[][] graphMatrix = FilesUS1718.readMatrix(new File(INPUT_MATRIX_PATH));
         String[] pointNames = FilesUS1718.readPointNames(new File(INPUT_NAMES_PATH));
 
         List<Integer> signPoints = new ArrayList<>();
         List<Integer> assemblyPoints = new ArrayList<>();
 
+        // Procura o AP, guarda a posição e adiciona os restantes pontos ao array de pontos
         for (int i = 0; i < pointNames.length; i++) {
             if (pointNames[i].contains("AP")) {
                 assemblyPoints.add(i);
@@ -62,6 +66,7 @@ public class MainUS18 {
             graph.addNode(pointNames[i]).setAttribute("ui.label", pointNames[i]);
         }
 
+        // Ler na matriz e atribuir o caminho e o devido custo
         for (int i = 0; i < graphMatrix.length; i++) {
             for (int j = i + 1; j < graphMatrix[i].length; j++) {
                 if (graphMatrix[i][j] > 0) {
@@ -79,6 +84,7 @@ public class MainUS18 {
         Runtime.getRuntime().exec(command);
     }
 
+    // Método que escreve os caminhos para o ficheiro .csv de output
     private static void writePathsToFile(PathInfo[] paths, String[] pointNames) throws IOException {
         File outputCSVFile = new File(OUTPUT_CSV_PATH);
         if (!outputCSVFile.exists()) outputCSVFile.createNewFile();
@@ -95,6 +101,7 @@ public class MainUS18 {
         }
     }
 
+    // Substitui no ficheiro de output .csv os indices pelos nomes dos pontos
     private static String replaceIndicesWithNames(String path, String[] pointNames) {
         StringBuilder namedPath = new StringBuilder();
         String[] indices = path.split(" -> ");

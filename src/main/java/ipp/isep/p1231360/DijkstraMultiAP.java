@@ -3,6 +3,7 @@ package ipp.isep.p1231360;
 import java.util.*;
 
 public class DijkstraMultiAP {
+    // Implementação do Dijkstra para vários AP
     public static PathInfo[] dijkstraMultiAP(double[][] graph, int[] signPoints, int[] assemblyPoints) {
         int numVertices = graph.length;
         PathInfo[] results = new PathInfo[signPoints.length];
@@ -21,6 +22,8 @@ public class DijkstraMultiAP {
             PriorityQueue<VertexDistancePair> pq = new PriorityQueue<>(Comparator.comparingDouble(v -> v.distance));
             pq.add(new VertexDistancePair(source, 0));
 
+            // Enquanto houver vértices na fila de prioridade, seleciona o vertice com menor custo,
+            // verifica se existe um caminho de menor custo.
             while (!pq.isEmpty()) {
                 VertexDistancePair current = pq.poll();
                 int currentVertex = current.vertex;
@@ -40,6 +43,7 @@ public class DijkstraMultiAP {
                 }
             }
 
+            // Comparação para descobrir qual é o caminho até ao AP com menor custo
             double minDistance = Double.MAX_VALUE;
             int nearestAP = -1;
             for (int ap : assemblyPoints) {
@@ -49,6 +53,7 @@ public class DijkstraMultiAP {
                 }
             }
 
+            // Reconstrói o caminho do ponto até ao AP
             List<Integer> path = new ArrayList<>();
             for (int at = nearestAP; at != -1; at = predecessors[at]) {
                 path.add(at);
@@ -62,6 +67,7 @@ public class DijkstraMultiAP {
         return results;
     }
 
+    // Classe para representar o par vértice e a distância para a fila de prioridade
     private static class VertexDistancePair {
         int vertex;
         double distance;

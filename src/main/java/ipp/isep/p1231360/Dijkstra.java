@@ -3,6 +3,7 @@ package ipp.isep.p1231360;
 import java.util.*;
 
 public class Dijkstra {
+    // Implementação do Dijkstra
     public static PathInfo[] dijkstra(double[][] graph, int[] signPoints, int assemblyPoint) {
         int numVertices = graph.length;
         PathInfo[] results = new PathInfo[signPoints.length];
@@ -21,6 +22,8 @@ public class Dijkstra {
             PriorityQueue<VertexDistancePair> pq = new PriorityQueue<>(Comparator.comparingDouble(v -> v.distance));
             pq.add(new VertexDistancePair(source, 0));
 
+            // Enquanto houver vértices na fila de prioridade, seleciona o vertice com menor custo,
+            // verifica se existe um caminho de menor custo.
             while (!pq.isEmpty()) {
                 VertexDistancePair current = pq.poll();
                 int currentVertex = current.vertex;
@@ -40,6 +43,7 @@ public class Dijkstra {
                 }
             }
 
+            // Reconstrói o caminho do ponto até ao AP
             List<Integer> path = new ArrayList<>();
             for (int at = assemblyPoint; at != -1; at = predecessors[at]) {
                 path.add(at);
@@ -53,6 +57,7 @@ public class Dijkstra {
         return results;
     }
 
+    // Classe para representar o par vértice e a distância para a fila de prioridade
     private static class VertexDistancePair {
         int vertex;
         double distance;

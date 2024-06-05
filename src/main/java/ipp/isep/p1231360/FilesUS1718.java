@@ -5,6 +5,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 public class FilesUS1718 {
+    // Ler a matriz no ficheiro de input
     public static double[][] readMatrix(File file) throws FileNotFoundException {
         int size = 0;
         Scanner lineCounter = new Scanner(new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8));
@@ -30,6 +31,7 @@ public class FilesUS1718 {
         return matrix;
     }
 
+    // Ler o ficheiro com os nomes dos pontos
     public static String[] readPointNames(File file) throws FileNotFoundException {
         Scanner scanner = new Scanner(new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8));
         String line = scanner.nextLine().replace("\uFEFF", ""); // Remove BOM if present

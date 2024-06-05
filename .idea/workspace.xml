@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea4e7b36-7b25-4ea0-aabd-61b1d2c2b40a" name="Changes" comment="modificações sprint 3">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_06_2024_20_59__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_06_2024_20_59__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/FilesUS17.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/FilesUS1718.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/Dijkstra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/Dijkstra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/FilesUS1718.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/FilesUS1718.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/MainUS17.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/MainUS17.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/MainUS18.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/MainUS18.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +72,52 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.MainUS17">
+    <configuration name="MainUS14" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ipp.isep.p1231360.MainUS14" />
+      <module name="Kruskal" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ipp.isep.p1231360.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainUS17 (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainUS17" />
+      <module name="Kruskal" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainUS17" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ipp.isep.p1231360.MainUS17" />
+      <module name="Kruskal" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ipp.isep.p1231360.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainUS18" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ipp.isep.p1231360.MainUS18" />
+      <module name="Kruskal" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ipp.isep.p1231360.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="DjangoTestsConfigurationType">
       <module name="MDISC-MST" />
       <option name="ENV_FILES" value="" />
@@ -94,6 +138,19 @@
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
       <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="MDISC-MST" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="MDISC-MST" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
       <module name="MDISC-MST" />
@@ -158,65 +215,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <method v="2" />
-    </configuration>
-    <configuration name="MainUS14" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ipp.isep.p1231360.MainUS14" />
-      <module name="Kruskal" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ipp.isep.p1231360.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainUS17 (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MainUS17" />
-      <module name="Kruskal" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainUS17" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ipp.isep.p1231360.MainUS17" />
-      <module name="Kruskal" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ipp.isep.p1231360.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainUS18" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ipp.isep.p1231360.MainUS18" />
-      <module name="Kruskal" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ipp.isep.p1231360.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="MDISC-MST" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="MDISC-MST" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <recent_temporary>
       <list>

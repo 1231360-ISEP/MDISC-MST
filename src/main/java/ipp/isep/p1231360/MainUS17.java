@@ -15,7 +15,8 @@ public class MainUS17 {
     private static final String INPUT_NAMES_PATH = INPUT_PATH + "/us17_points_names.csv";
     private static final String OUTPUT_CSV_PATH = OUTPUT_PATH + "/shortest_paths.csv";
     private static final String GRAPH_PATH = OUTPUT_PATH + "/graph.gv";
-    private static final String PATH_IMAGE_PATH = OUTPUT_PATH + "/path.png";
+    private static final String GRAPH_IMAGE = OUTPUT_PATH + "/graph.png";
+    private static final String INDIVIDUAL_PATH_IMAGES_DIR = OUTPUT_PATH + "/paths";
 
     public static void main(String[] args) throws IOException {
         File dir = new File(INPUT_PATH);
@@ -31,8 +32,8 @@ public class MainUS17 {
         if (!outputDir.isDirectory())
             throw new FileNotFoundException(OUTPUT_PATH + " directory not found");
 
-        double[][] graphMatrix = FilesUS17.readMatrix(new File(INPUT_MATRIX_PATH));
-        String[] pointNames = FilesUS17.readPointNames(new File(INPUT_NAMES_PATH));
+        double[][] graphMatrix = FilesUS1718.readMatrix(new File(INPUT_MATRIX_PATH));
+        String[] pointNames = FilesUS1718.readPointNames(new File(INPUT_NAMES_PATH));
 
         List<Integer> signPoints = new ArrayList<>();
         int assemblyPoint = -1;
@@ -49,6 +50,32 @@ public class MainUS17 {
             throw new IllegalStateException("No assembly point found in the input names.");
         }
 
+        // Calcular o caminho mais curto de um ponto inserido pelo utilizador
+        //Quando for a tirar os comentários disto comentar linhas: 79,80, 83,86,89
+        /*Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the name of the point:");
+        String pointName = scanner.nextLine().trim();
+
+        // Validar se o ponto existe no array pointNames
+        int pointIndex = -1;
+        for (int i = 0; i < pointNames.length; i++) {
+            if (pointNames[i].equalsIgnoreCase(pointName)) {
+                pointIndex = i;
+                break;
+            }
+        }
+
+        if (pointIndex == -1) {
+            System.out.println("Point name not found.");
+            return;
+        }
+        PathInfo[] singlePath = Dijkstra.dijkstra(graphMatrix, new int[]{pointIndex}, assemblyPoint);
+
+        // Caminho mais curto e custo na consola
+        PathInfo paths = singlePath[0];
+        String namedPath = replaceIndicesWithNames(paths.path, pointNames);
+        System.out.println("Path: " + namedPath + ". Cost: " + paths.distance);*/
+
         int[] signPointsArray = signPoints.stream().mapToInt(Integer::intValue).toArray();
         PathInfo[] paths = Dijkstra.dijkstra(graphMatrix, signPointsArray, assemblyPoint);
 
@@ -57,6 +84,11 @@ public class MainUS17 {
 
         // Escreve os caminhos no arquivo de saída
         writePathsToFile(paths, shortestPath, pointNames);
+
+        // Gera imagens para cada caminho individual
+        generateIndividualPathImages(paths, pointNames, graphMatrix);
+        //Para o ponto pedido na consola
+        //generateIndividualPathImages(singlePath, pointNames, graphMatrix);
 
         Graph graph = new SingleGraph("Graph");
 
@@ -74,26 +106,45 @@ public class MainUS17 {
             }
         }
 
-        // Sublinhe o caminho com cor vermelha
-        String[] shortestPathNodes = shortestPath.path.split(" -> ");
-        for (int i = 0; i < shortestPathNodes.length - 1; i++) {
-            String edgeId = shortestPathNodes[i] + "-" + shortestPathNodes[i + 1];
-            if (graph.getEdge(edgeId) != null) {
-                graph.getEdge(edgeId).setAttribute("color", "red");
-            } else {
-                // Verifica se a direção inversa da aresta existe
-                edgeId = shortestPathNodes[i + 1] + "-" + shortestPathNodes[i];
-                if (graph.getEdge(edgeId) != null) {
-                    graph.getEdge(edgeId).setAttribute("color", "red");
-                }
-            }
-        }
-
         FileSinkDOT sink = new FileSinkDOT();
         sink.writeAll(graph, GRAPH_PATH);
 
-        String[] command = {"dot", "-Tpng", GRAPH_PATH, "-o", PATH_IMAGE_PATH};
+        String[] command = {"dot", "-Tpng", GRAPH_PATH, "-o", GRAPH_IMAGE};
         Runtime.getRuntime().exec(command);
+    }
+
+    private static void generateIndividualPathImages(PathInfo[] paths, String[] pointNames, double[][] graphMatrix) throws IOException {
+        File individualPathsDir = new File(INDIVIDUAL_PATH_IMAGES_DIR);
+        if (!individualPathsDir.exists()) {
+            individualPathsDir.mkdirs();
+        }
+
+        for (PathInfo path : paths) {
+            Graph graph = new SingleGraph("PathGraph");
+            String[] pathNodes = path.path.split(" -> ");
+            for (String node : pathNodes) {
+                int nodeIndex = Integer.parseInt(node.trim());
+                graph.addNode(pointNames[nodeIndex]).setAttribute("ui.label", pointNames[nodeIndex]);
+            }
+
+            for (int i = 0; i < pathNodes.length - 1; i++) {
+                int nodeIndex1 = Integer.parseInt(pathNodes[i].trim());
+                int nodeIndex2 = Integer.parseInt(pathNodes[i + 1].trim());
+                String edgeId = pointNames[nodeIndex1] + "-" + pointNames[nodeIndex2];
+                if (graph.getEdge(edgeId) == null) {
+                    graph.addEdge(edgeId, pointNames[nodeIndex1], pointNames[nodeIndex2])
+                            .setAttribute("distance", graphMatrix[nodeIndex1][nodeIndex2]);
+                }
+            }
+
+            String graphPath = INDIVIDUAL_PATH_IMAGES_DIR + "/" + pointNames[Integer.parseInt(pathNodes[0].trim())] + "_to_" + pointNames[Integer.parseInt(pathNodes[pathNodes.length - 1].trim())] + ".gv";
+            FileSinkDOT sink = new FileSinkDOT();
+            sink.writeAll(graph, graphPath);
+
+            String imagePath = INDIVIDUAL_PATH_IMAGES_DIR + "/" + pointNames[Integer.parseInt(pathNodes[0].trim())] + "_to_" + pointNames[Integer.parseInt(pathNodes[pathNodes.length - 1].trim())] + ".png";
+            String[] command = {"dot", "-Tpng", graphPath, "-o", imagePath};
+            Runtime.getRuntime().exec(command);
+        }
     }
 
     private static PathInfo findShortestPath(PathInfo[] paths) {

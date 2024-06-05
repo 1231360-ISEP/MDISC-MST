@@ -15,7 +15,7 @@ public class MainUS18 {
     private static final String INPUT_NAMES_PATH = INPUT_PATH + "/us18_points_names.csv";
     private static final String OUTPUT_CSV_PATH = OUTPUT_PATH + "/shortest_paths.csv";
     private static final String GRAPH_PATH = OUTPUT_PATH + "/graph.gv";
-    private static final String PATH_IMAGE_PATH = OUTPUT_PATH + "/path.png";
+    private static final String PATH_IMAGE_PATH = OUTPUT_PATH + "/graph.png";
 
     public static void main(String[] args) throws IOException {
         File dir = new File(INPUT_PATH);
@@ -31,8 +31,8 @@ public class MainUS18 {
         if (!outputDir.isDirectory())
             throw new FileNotFoundException(OUTPUT_PATH + " directory not found");
 
-        double[][] graphMatrix = FilesUS17.readMatrix(new File(INPUT_MATRIX_PATH));
-        String[] pointNames = FilesUS17.readPointNames(new File(INPUT_NAMES_PATH));
+        double[][] graphMatrix = FilesUS1718.readMatrix(new File(INPUT_MATRIX_PATH));
+        String[] pointNames = FilesUS1718.readPointNames(new File(INPUT_NAMES_PATH));
 
         List<Integer> signPoints = new ArrayList<>();
         List<Integer> assemblyPoints = new ArrayList<>();
@@ -71,23 +71,6 @@ public class MainUS18 {
                 }
             }
         }
-
-        // Sublinhe os caminhos com cor vermelha (Nesta Main funcionou, mas não será preciso em princípio)
-        /*for (PathInfo path : paths) {
-            String[] pathNodes = path.path.split(" -> ");
-            for (int i = 0; i < pathNodes.length - 1; i++) {
-                String edgeId = pathNodes[i] + "-" + pathNodes[i + 1];
-                if (graph.getEdge(edgeId) != null) {
-                    graph.getEdge(edgeId).setAttribute("color", "red");
-                } else {
-                    // Verifica se a direção inversa da aresta existe
-                    edgeId = pathNodes[i + 1] + "-" + pathNodes[i];
-                    if (graph.getEdge(edgeId) != null) {
-                        graph.getEdge(edgeId).setAttribute("color", "red");
-                    }
-                }
-            }
-        }*/
 
         FileSinkDOT sink = new FileSinkDOT();
         sink.writeAll(graph, GRAPH_PATH);

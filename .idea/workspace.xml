@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea4e7b36-7b25-4ea0-aabd-61b1d2c2b40a" name="Changes" comment="Updated mainus17 with new dotPath">
+    <list default="true" id="ea4e7b36-7b25-4ea0-aabd-61b1d2c2b40a" name="Changes" comment="modificações sprint 3">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_06_2024_20_59__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_06_2024_20_59__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/FilesUS17.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/FilesUS1718.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/MainUS17.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/MainUS17.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/MainUS18.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ipp/isep/p1231360/MainUS18.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,24 +41,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.MainUS14.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MainUS17 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Application.MainUS17.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/dinis/OneDrive/Ambiente de Trabalho/MDISC-MST/src/main/resources/out&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.MainUS14.executor": "Run",
+    "Application.MainUS17 (1).executor": "Run",
+    "Application.MainUS17.executor": "Run",
+    "Application.MainUS18.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/joaop/Desktop/lei-24-s2-1db-g021",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\dinis\OneDrive\Ambiente de Trabalho\MDISC-MST\src\main\resources\out" />
@@ -68,39 +74,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.MainUS17">
-    <configuration name="MainUS14" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ipp.isep.p1231360.MainUS14" />
-      <module name="Kruskal" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ipp.isep.p1231360.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainUS17 (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MainUS17" />
-      <module name="Kruskal" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainUS17" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ipp.isep.p1231360.MainUS17" />
-      <module name="Kruskal" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ipp.isep.p1231360.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="DjangoTestsConfigurationType">
       <module name="MDISC-MST" />
       <option name="ENV_FILES" value="" />
@@ -121,19 +94,6 @@
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
       <method v="2" />
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="MDISC-MST" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="MDISC-MST" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
       <module name="MDISC-MST" />
@@ -199,9 +159,69 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <method v="2" />
     </configuration>
+    <configuration name="MainUS14" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ipp.isep.p1231360.MainUS14" />
+      <module name="Kruskal" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ipp.isep.p1231360.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainUS17 (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainUS17" />
+      <module name="Kruskal" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainUS17" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ipp.isep.p1231360.MainUS17" />
+      <module name="Kruskal" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ipp.isep.p1231360.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainUS18" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ipp.isep.p1231360.MainUS18" />
+      <module name="Kruskal" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ipp.isep.p1231360.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="MDISC-MST" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="MDISC-MST" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainUS17" />
+        <item itemvalue="Application.MainUS18" />
         <item itemvalue="Application.MainUS17 (1)" />
         <item itemvalue="Application.MainUS14" />
       </list>
@@ -210,7 +230,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
       </set>
     </attachedChunks>
   </component>
@@ -234,6 +255,10 @@
       <workItem from="1716997894595" duration="5000" />
       <workItem from="1717249471854" duration="930000" />
       <workItem from="1717250428744" duration="619000" />
+      <workItem from="1717255968444" duration="5580000" />
+      <workItem from="1717326047298" duration="173000" />
+      <workItem from="1717421893814" duration="5913000" />
+      <workItem from="1717489737122" duration="18000" />
     </task>
     <task id="LOCAL-00001" summary="Add us17 update graph with new methods and files change the addEdge directly">
       <option name="closed" value="true" />
@@ -259,7 +284,31 @@
       <option name="project" value="LOCAL" />
       <updated>1716933186815</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Adição da nova US18 and modificação da US17 Main">
+      <option name="closed" value="true" />
+      <created>1717259405405</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1717259405405</updated>
+    </task>
+    <task id="LOCAL-00005" summary="modificação US18 Main">
+      <option name="closed" value="true" />
+      <created>1717261226577</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1717261226577</updated>
+    </task>
+    <task id="LOCAL-00006" summary="modificações, o &quot;FilesUS17&quot; serve para ler para a US17 e 18">
+      <option name="closed" value="true" />
+      <created>1717261365897</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1717261365897</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,6 +318,9 @@
     <MESSAGE value="Add us17 update graph with new methods and files change the addEdge directly" />
     <MESSAGE value="Add new input files to the project&#10;Add new file FilesUS17 to read the new input files&#10;Updated the Dijkstra, PathInfo and MainUS17" />
     <MESSAGE value="Updated mainus17 with new dotPath" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated mainus17 with new dotPath" />
+    <MESSAGE value="Adição da nova US18 and modificação da US17 Main" />
+    <MESSAGE value="modificação US18 Main" />
+    <MESSAGE value="modificações, o &quot;FilesUS17&quot; serve para ler para a US17 e 18" />
+    <option name="LAST_COMMIT_MESSAGE" value="modificações, o &quot;FilesUS17&quot; serve para ler para a US17 e 18" />
   </component>
 </project>
